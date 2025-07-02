@@ -50,7 +50,7 @@ public class JansOTPService extends OTPService {
             String phone = getUserPhoneNumber(username);
             String maskedPone = maskPhone(phone);
             String otpCode = generateOTpCode(OTP_CODE_LENGTH);
-            logger.info("Generated OTP code is {}.", otpCode);
+            logger.info("Generated OTP code is: ", otpCode);
             String message = "Hi " + username + ", Welcome to AgamaLab. This is your OTP Code to complete your login process: " + otpCode;
             associateGeneratedCodeToUser(username, otpCode);
             sendTwilioSms(username, phone, message);
