@@ -103,7 +103,10 @@ public class JansOTPService extends OTPService {
         for (int i = 0; i < codeLength; i++) {
             otp[i] = numbers.charAt(random.nextInt(numbers.length()));
         }
-        return new String(otp);
+        String code = new String(otp);
+        
+        logger.info("🔐 Generated OTP code is: {}", code);
+        return code;
     }
 
     private String getUserPhoneNumber(String username) {
